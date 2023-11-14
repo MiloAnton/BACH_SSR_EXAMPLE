@@ -17,7 +17,12 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:4000/books") // Remplacez par l'URL de votre API
+    fetch("http://localhost:4000/books", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) =>

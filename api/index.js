@@ -1,8 +1,11 @@
 const express = require('express');
 const { Pool } = require('pg');
+const cors = require('cors');
 
 const app = express();
 const port = 4000;
+
+app.use(cors());
 
 // Configuration de la connexion à la base de données
 const pool = new Pool({
